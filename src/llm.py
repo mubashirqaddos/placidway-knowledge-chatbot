@@ -28,10 +28,10 @@ class Gemini:
                 'responseMimeType': 'application/json', 'responseJsonSchema': schema,
             },
         }
-        for attempt in range(3):
+        for attempt in range(2):
             try:
-                response = requests.post(url, headers={'x-goog-api-key': self.key}, json=body, timeout=(10, 40))
-                if response.status_code in (429, 500, 502, 503, 504) and attempt < 2:
+                response = requests.post(url, headers={'x-goog-api-key': self.key}, json=body, timeout=(5, 18))
+                if response.status_code in (429, 500, 502, 503, 504) and attempt < 1:
                     try:
                         delay = min(8, max(1, float(response.headers.get('Retry-After', 2 ** attempt))))
                     except ValueError:

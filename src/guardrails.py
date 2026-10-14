@@ -79,6 +79,8 @@ def route(question):
         return 'declined'
     if re.search(r'\b(diabetes|pregnant|pregnancy|diagnose|diagnosis|my medication|my condition|should i stop|cure me|safe for me|safe for my)\b|آمن.*حالتي|seguro.*(mi|diabetes)', q):
         return 'medical'
+    if (re.search(r'\b(safe|safety|suitable|recommend|should|cure)\b', q) and re.search(r'\b(i|me|my)\b', q)) or re.search(r'\b(safe|suitable) (for|if)\b', q):
+        return 'medical'
     if re.search(r'\b(book|schedule|reserve)\b.*\b(appointment|consultation|tomorrow)\b|reserva.*cita|حجز.*موعد', q):
         return 'appointment'
     if re.search(r'\b(weather|football|bitcoin|recipe|president|clima)\b|الطقس', q):
