@@ -1,5 +1,7 @@
 # PlacidWay Website Knowledge Chatbot
 
+[Open the public chatbot](https://placidway-assessment-mubashir.streamlit.app/~/+/) · [Standard Streamlit URL](https://placidway-assessment-mubashir.streamlit.app/)
+
 A small, source-grounded chatbot for the **AI Automation Assessment: Website Knowledge Chatbot**. Its knowledge is restricted to the seven URLs supplied in the assessment. It answers published package/clinic/cost questions, cites the actual source pages, declines personal medical advice and unsupported requests, and offers a free-quote contact path.
 
 ## Stack and reasons
@@ -103,7 +105,7 @@ Tests cover source/ID validation, invented numbers and evidence, prompt injectio
 4. Deploy with public viewer access and record the **actual returned URL** in `submission.md`. Test it in a signed-out/incognito session using all eight questions; a localhost test is not a public deployment test.
 5. Keep the app available for at least seven days after submission. **Community Cloud hibernates after 12 hours without traffic** and visitors can wake it. Once-daily visits do not guarantee continuous availability. Do not claim strict uninterrupted uptime; resolve this assessment requirement with the reviewer if sleep is unacceptable. Do not enable paid hosting without the owner's explicit change to the free-only requirement.
 
-No public deployment URL is fabricated in this repository. Deployment is complete only after a real public URL and signed-out tests are recorded.
+The app was deployed on 14 October 2026, with public viewer access and a private source repository. The direct public app route above was verified in a separate Chrome session; it avoids an outer Streamlit loading-screen delay observed during verification. See `test_results_deployed.md` for the live browser run when present. The standard Streamlit URL remains available as well.
 
 ## Project structure
 

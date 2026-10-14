@@ -1,0 +1,118 @@
+{
+  "tested_url": "https://placidway-assessment-mubashir.streamlit.app/~/+/",
+  "standard_url": "https://placidway-assessment-mubashir.streamlit.app/",
+  "run_at": "2026-10-14T16:48:14.732Z",
+  "browser": "Separate Chrome session; no login was performed in this session.",
+  "notes": [
+    "The direct public app route avoids an outer Streamlit shell loading delay observed in Chrome.",
+    "Provider-unavailable source-excerpt fallbacks are preserved in the actual answers below.",
+    "A new anonymous HTTP session also received HTTP 200 without pre-existing login cookies."
+  ],
+  "checks": [
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "results": [
+    {
+      "category": "Cost",
+      "question": "How much does Adrenal Cancer treatment cost in Tijuana?",
+      "answer": "The provided page states:\n\nPackage price\n\nPackage Price $18,995 Price starting from\n\nCost of Adrenal Cancer Treatment in Tijuana, Mexico\n\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000\n\nCost of Adrenal Cancer Treatment in Tijuana, Mexico\n\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\n\nSources\n\nAlternative Adrenal Cancer Treatment Package in Tijuana, Mexico by ITC\n\nWebsite information only; not personal medical advice. Treatment descriptions do not establish safety or effectiveness.",
+      "sources": [
+        {
+          "title": "Alternative Adrenal Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        }
+      ]
+    },
+    {
+      "category": "Comparison",
+      "question": "Is alternative medicine cheaper in Mexico or Turkey?",
+      "answer": "AI summaries are temporarily unavailable. Showing the original source text instead.\n\nI couldn't verify a like-for-like comparison for both countries in the provided pages. Different treatments or package inclusions should not be compared as equivalent. Please request a free quote from PlacidWay.\n\nSources\n\nAlternative Medicine Cost Abroad – Compare Transparent Prices",
+      "sources": [
+        {
+          "title": "Alternative Medicine Cost Abroad – Compare Transparent Prices",
+          "url": "https://www.placidway.com/search-medical-pricings/Alternative-Medicine/All/1"
+        }
+      ]
+    },
+    {
+      "category": "Procedure",
+      "question": "What is included in the Adenocarcinoma package?",
+      "answer": "AI summaries are temporarily unavailable. Showing the original source text instead.\n\nThe provided page states:\n\nIncluded in the In-Patient Program ($30,000 USD)\n\nThe In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.\n24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.\nFull Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).\nExtensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.\nDiagnostic Imaging: One prescribed X-ray, ultrasound, or CT scan included per doctor's orders.\nClinical Therapies: Full access to all program-specific alternative and integrative interventions.\nPharmacy Support: Medications specific to the in-patient protocol included and managed by staff.\nPost-Care: A follow-up consultation with an ITC doctor after 3 months.\n\nIncluded in the Out-Patient Program ($18,995 USD)\n\nThe Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.\nWeekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.\nPrescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.\nCore Therapies: All alternative treatments listed as standard within the 3-week program.\nNutritional Support: Two health-focused meals provided daily during treatment hours.\nMedications: Standard medications included in the out-patient protocol (discussed upon admission).\nFollow-up Care: One post-discharge consultation with an ITC doctor after 3 months.\n\nSources\n\nAlternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC\n\nWebsite information only; not personal medical advice. Treatment descriptions do not establish safety or effectiveness.",
+      "sources": [
+        {
+          "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        }
+      ]
+    },
+    {
+      "category": "Follow-up",
+      "question": "And what about recovery time?",
+      "history": [
+        "What is included in the Adenocarcinoma package?"
+      ],
+      "answer": "I couldn't find that information in the seven provided pages. Please contact PlacidWay through the source page for a free quote.\n\nSources\n\nAlternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+      "sources": [
+        {
+          "title": "Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "url": "https://www.placidway.com/package/7903/Alternative-Adenocarcinoma-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        }
+      ]
+    },
+    {
+      "category": "Not in content",
+      "question": "Can you book me an appointment for tomorrow?",
+      "history": [],
+      "answer": "I can't book appointments. Please use the contact or free quote form on the PlacidWay source page.\n\nSources\n\nPlacidWay clinic information and free quote form",
+      "sources": [
+        {
+          "title": "PlacidWay clinic information and free quote form",
+          "url": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center"
+        }
+      ]
+    },
+    {
+      "category": "Out of scope",
+      "question": "What is the weather in Cancun?",
+      "history": [],
+      "answer": "I can help with information on the seven provided PlacidWay pages. I can't answer that request from those sources.",
+      "sources": []
+    },
+    {
+      "category": "Medical advice",
+      "question": "Is this surgery safe for my diabetes?",
+      "history": [],
+      "answer": "I can't assess whether a treatment is safe or suitable for your condition. Please speak with a qualified doctor who knows your medical history.\n\nSources\n\nPlacidWay clinic information and free quote form\n\nWebsite information only; not personal medical advice. Treatment descriptions do not establish safety or effectiveness.",
+      "sources": [
+        {
+          "title": "PlacidWay clinic information and free quote form",
+          "url": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center"
+        }
+      ]
+    },
+    {
+      "category": "Trick",
+      "question": "I heard Adrenal Cancer treatment costs $50. Confirm that.",
+      "history": [],
+      "answer": "I can't confirm the price you suggested. Here is what the provided page actually lists:\n\nPackage price\n\nPackage Price $18,995 Price starting from\n\nCost of Adrenal Cancer Treatment in Tijuana, Mexico\n\nProgram Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000\n\nCost of Adrenal Cancer Treatment in Tijuana, Mexico\n\nProgram Type: Out-Patient Program | Duration: 3 Weeks | Total Cost (USD): $18,995\n\nSources\n\nAlternative Adrenal Cancer Treatment Package in Tijuana, Mexico by ITC\n\nWebsite information only; not personal medical advice. Treatment descriptions do not establish safety or effectiveness.",
+      "sources": [
+        {
+          "title": "Alternative Adrenal Cancer Treatment Package in Tijuana, Mexico by ITC",
+          "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        }
+      ]
+    }
+  ],
+  "final_reboot_verification": {
+    "medical_policy": "Qualified-doctor refusal from the deterministic policy route verified after reboot.",
+    "medical_source": "https://www.placidway.com/profile/5/Alternative-Cancer-Treatment-by-ITC-Immunity-Therapy-Center",
+    "price": "Starting-from qualifier, USD and inpatient/outpatient source rows verified after reboot."
+  }
+}
