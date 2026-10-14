@@ -14,6 +14,14 @@ Verified locally on 14 October 2026. This record distinguishes local checks from
 - Local browser: a real cost question displayed source-linked USD program prices. Additional browser verification and screenshots are retained with the deliverable.
 - Gemini returned temporary HTTP 503 errors during testing. Provider failures are handled without raw tracebacks or invented answers; available source evidence is shown with an explicit fallback notice.
 
+## Reliability follow-up after screenshot review
+
+- Found and fixed an optional query-rewrite failure that returned `unavailable` before retrieval when a conversation already had history. Provider rewrite failures now retain the original/local history-resolved question and continue source retrieval. This does not repair an upstream Gemini outage or guarantee a generated summary.
+- Re-ran the automated suite: **36 passed**. Two regression checks cover comparison retrieval and a package-price follow-up during an HTTP 503 rewrite outage.
+- A fresh minimal structured-JSON request using the configured local key and model succeeded. The key/model configuration can work; this single success does not establish sustained provider reliability or diagnose the exact upstream status of each screenshot.
+- The earlier eight-question browser record includes safe fallback outputs. It must not be interpreted as proof that AI summaries and matched comparisons are consistently available. Raw package excerpts preserve evidence but do not satisfy the procedure-summary expectation as well as a working grounded summary.
+- Core ingestion, sources, cost context, chat, unknown/medical/booking handling and refresh are implemented. Seven-day availability after actual submission remains a future obligation. Free-host sleep and provider interruptions remain material limitations.
+
 ## External state
 
 - Source repository created: `https://github.com/mubashirqaddos/placidway-knowledge-chatbot` (private).
