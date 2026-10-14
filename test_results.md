@@ -1,6 +1,6 @@
 # Assessment test results
 
-Run: 2026-10-14T15:57:28.547842+00:00
+Run: 2026-10-14T16:09:28.977599+00:00
 Mode: **extractive** — actual source excerpts; Gemini integration has not been exercised by this run.
 Knowledge snapshot: 2026-10-14T15:55:30.165944+00:00
 
@@ -14,6 +14,10 @@ These are actual local outputs. This is not a public deployment or an incognito 
 **Execution path:** source_price
 
 The provided page states:
+
+**Package price**
+
+> Package Price $18,995 Price starting from
 
 **Cost of Adrenal Cancer Treatment in Tijuana, Mexico**
 
@@ -120,6 +124,10 @@ Source: [PlacidWay clinic information and free quote form](https://www.placidway
 **Execution path:** source_price
 
 I can't confirm the price you suggested. Here is what the provided page actually lists:
+
+**Package price**
+
+> Package Price $18,995 Price starting from
 
 **Cost of Adrenal Cancer Treatment in Tijuana, Mexico**
 

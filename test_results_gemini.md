@@ -1,6 +1,6 @@
 # Assessment test results
 
-Run: 2026-10-14T15:57:34.272323+00:00
+Run: 2026-10-14T16:09:32.174446+00:00
 Mode: **gemini** (gemini-3.1-flash-lite)
 Knowledge snapshot: 2026-10-14T15:55:30.165944+00:00
 
@@ -14,6 +14,10 @@ These are actual local outputs. This is not a public deployment or an incognito 
 **Execution path:** source_price
 
 The provided page states:
+
+**Package price**
+
+> Package Price $18,995 Price starting from
 
 **Cost of Adrenal Cancer Treatment in Tijuana, Mexico**
 
@@ -29,12 +33,18 @@ Source: [Alternative Adrenal Cancer Treatment Package in Tijuana, Mexico by ITC]
 
 **Question:** Is alternative medicine cheaper in Mexico or Turkey?
 
-**Status:** not_found
-**Execution path:** extractive_fallback
+**Status:** answered
+**Execution path:** gemini
 
-AI summaries are temporarily unavailable. Showing the original source text instead.
+The provided page states:
 
-I couldn't verify a like-for-like comparison for both countries in the provided pages. Different treatments or package inclusions should not be compared as equivalent. Please request a free quote from PlacidWay.
+**Which Clinics Abroad Offer the Best Alternative Medicine Packages?**
+
+> Clinic / Surgeon: Fizikon Medical Center Konya, Turkey | Standard: $110 Modified date Jul 31, 2023 | Procedure: Ozone Therapy, Alternative Medicine
+
+**Which Clinics Abroad Offer the Best Alternative Medicine Packages?**
+
+> Clinic / Surgeon: Stem Health Guadalajara Zapopan , Mexico | Standard: $1000 Modified date Mar 28, 2025 | Procedure: Ozone Therapy, Alternative Medicine
 
 Source: [Alternative Medicine Cost Abroad – Compare Transparent Prices](https://www.placidway.com/search-medical-pricings/Alternative-Medicine/All/1)
 
@@ -43,14 +53,15 @@ Source: [Alternative Medicine Cost Abroad – Compare Transparent Prices](https:
 **Question:** What is included in the Adenocarcinoma package?
 
 **Status:** answered
-**Execution path:** gemini
+**Execution path:** extractive_fallback
 
-The In-Patient Program includes 24/7 medical supervision, private room and board with three daily meals, weekly lab panels, one diagnostic imaging scan, clinical therapies, pharmacy support, and a 3-month follow-up consultation.
+AI summaries are temporarily unavailable. Showing the original source text instead.
 
-The Out-Patient Program includes weekly comprehensive lab work, one prescribed imaging scan, core alternative therapies, two daily meals, standard medications, and a 3-month follow-up consultation.
+The provided page states:
 
 **Included in the In-Patient Program ($30,000 USD)**
 
+> The In-patient program is designed for patients that require medical care 24/7, that cannot come in and out daily to receive therapies at our medical center.
 > 24/7 Medical Supervision: Constant access to dedicated doctor and nursing care throughout the 3-week stay.
 > Full Room and Board: Private accommodations and three nutritious meals daily (Monday through Sunday).
 > Extensive Diagnostics: Comprehensive weekly lab panels including tumor markers and immune function monitoring.
@@ -61,6 +72,7 @@ The Out-Patient Program includes weekly comprehensive lab work, one prescribed i
 
 **Included in the Out-Patient Program ($18,995 USD)**
 
+> The Out-patient program is designed for patients that can come in and out daily to receive therapies at our medical center not needing to stay overnight.
 > Weekly Comprehensive Lab Work: CBC, blood chemistry, immunology assessment, kidney function, metabolic and coagulation panels (TP/TPT), specific tumor markers, and urinalysis.
 > Prescribed Imaging: One X-ray, ultrasound, or CT scan of one area as directed by your ITC physician.
 > Core Therapies: All alternative treatments listed as standard within the 3-week program.
@@ -75,9 +87,11 @@ Source: [Alternative Adenocarcinoma Cancer Treatment Package in Tijuana, Mexico 
 **Question:** And what about recovery time?
 
 **Status:** not_found
-**Execution path:** gemini
+**Execution path:** extractive_fallback
 
-I couldn't find that information in the seven provided pages. Please contact PlacidWay through the source page for a free quote.
+AI summaries are temporarily unavailable. Showing the original source text instead.
+
+The provided package page does not state a verified recovery time. A treatment program's duration is not the same as recovery time. Please ask the clinic through PlacidWay.
 
 **Previous user question:** What is included in the Adenocarcinoma package?
 
@@ -122,6 +136,10 @@ Source: [PlacidWay clinic information and free quote form](https://www.placidway
 **Execution path:** source_price
 
 I can't confirm the price you suggested. Here is what the provided page actually lists:
+
+**Package price**
+
+> Package Price $18,995 Price starting from
 
 **Cost of Adrenal Cancer Treatment in Tijuana, Mexico**
 

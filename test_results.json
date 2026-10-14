@@ -1,5 +1,5 @@
 {
-  "run_at": "2026-10-14T15:57:28.547842+00:00",
+  "run_at": "2026-10-14T16:09:28.977599+00:00",
   "mode": "extractive",
   "model": null,
   "results": [
@@ -16,6 +16,11 @@
         }
       ],
       "evidence": [
+        {
+          "quote": "Package Price $18,995 Price starting from",
+          "heading": "Package price",
+          "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        },
         {
           "quote": "Program Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000",
           "heading": "Cost of Adrenal Cancer Treatment in Tijuana, Mexico",
@@ -164,6 +169,11 @@
         }
       ],
       "evidence": [
+        {
+          "quote": "Package Price $18,995 Price starting from",
+          "heading": "Package price",
+          "url": "https://www.placidway.com/package/7902/Alternative-Adrenal-Cancer-Treatment-Package-in-Tijuana-Mexico-by-ITC"
+        },
         {
           "quote": "Program Type: In-Patient Program | Duration: 3 Weeks | Total Cost (USD): $30,000",
           "heading": "Cost of Adrenal Cancer Treatment in Tijuana, Mexico",
