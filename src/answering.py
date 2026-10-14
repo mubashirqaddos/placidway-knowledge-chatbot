@@ -82,7 +82,9 @@ class Bot:
                 if isinstance(rewritten.get('question'), str) and 3 <= len(rewritten['question']) <= 2500:
                     resolved = rewritten['question']
             except ServiceUnavailable:
-                return Answer('unavailable', message('unavailable', language), default_source, language=language, mode='gemini')
+                # Rewriting is optional. Keep the original/local history-resolved
+                # query so a provider outage cannot bypass the knowledge base.
+                pass
         try:
             retrieved = self.retriever.retrieve(resolved)
         except Exception:
