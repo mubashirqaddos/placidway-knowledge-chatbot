@@ -43,3 +43,39 @@ def test_country_followup_does_not_reuse_mexico_price():
 def test_unlisted_destination_does_not_reuse_mexico_price():
     answer = bot().answer('How much does Adrenal cancer treatment cost in Pakistan?')
     assert answer.status == 'not_found'
+
+
+def test_rewrite_outage_still_searches_sources_with_history():
+    from src.llm import ServiceUnavailable
+
+    class UnavailableProvider:
+        def generate(self, *args, **kwargs):
+            raise ServiceUnavailable('http_503')
+
+    assistant = Bot(Retriever(load_index(), use_vectors=False), UnavailableProvider())
+    answer = assistant.answer(
+        'Is alternative medicine cheaper in Mexico or Turkey?',
+        [{'role': 'user', 'content': 'Tell me about the clinic.'}],
+    )
+    assert answer.status == 'not_found'
+    assert answer.mode == 'extractive_fallback'
+    assert answer.sources and 'search-medical-pricings' in answer.sources[0]['url']
+    assert 'like-for-like' in answer.text
+
+
+def test_rewrite_outage_preserves_followup_subject_and_price():
+    from src.llm import ServiceUnavailable
+
+    class UnavailableProvider:
+        def generate(self, *args, **kwargs):
+            raise ServiceUnavailable('http_503')
+
+    assistant = Bot(Retriever(load_index(), use_vectors=False), UnavailableProvider())
+    answer = assistant.answer(
+        'And what does it cost?',
+        [{'role': 'user', 'content': 'Tell me about the Adrenal package.'}],
+    )
+    assert answer.status == 'answered'
+    assert 'adrenal' in answer.resolved_question.lower()
+    evidence = ' '.join(e['quote'] for e in answer.evidence)
+    assert '18,995' in evidence and 'USD' in evidence
