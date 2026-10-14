@@ -162,6 +162,12 @@ class Bot:
                 break
         if not selected:
             return Answer('not_found', message('not_found', language), source_links(retrieved[:1]), language=language, mode='extractive', quote_intent=True, resolved_question=resolved)
+        if price and selected:
+            # Preserve the page's explicit starting-from qualifier as well as the
+            # complete program rows. This is evidence from the same indexed page.
+            price_header = next((c for c in self.retriever.snapshot['chunks'] if c['page_id'] == selected[0]['page_id'] and c['heading'] == 'Package price' and 'starting from' in c['text'].lower()), None)
+            if price_header and all(c['id'] != price_header['id'] for c in selected):
+                selected.insert(0, price_header)
         prefix = message('trick', language) if re.search(r'\b(heard|confirm)\b', question, re.I) and price else message('evidence', language)
         evidence = [{'quote':c['text'], 'heading':c['heading'], 'url':c['url']} for c in selected]
         return Answer('answered', prefix, source_links(selected), evidence, language, 'extractive', quote_intent(question), resolved)

@@ -55,6 +55,14 @@ class Retriever:
             # A destination follow-up must not reuse a package from a different country.
             # For a named package its title supplies the location, not incidental prose.
             candidates = [i for i in candidates if any(country in (self.chunks[i]['title'] if condition else self.chunks[i]['search_text']).lower() for country in countries)]
+        if condition:
+            # Do not silently reuse Mexico for an unsupported place such as Pakistan
+            # merely because the place is absent from our common-country vocabulary.
+            places = re.findall(r'\bin\s+([a-z][a-z ]{1,35}?)(?=\s+(?:for|with|and|or|cost|price|treatment|package|please)\b|[?.,!\[\]]|$)', question.lower())
+            for place in places:
+                place = place.strip()
+                if not place.startswith(('the ', 'a ', 'an ')):
+                    candidates = [i for i in candidates if place in self.chunks[i]['title'].lower()]
         if not candidates:
             return []
         scores, coverage = {}, {}
