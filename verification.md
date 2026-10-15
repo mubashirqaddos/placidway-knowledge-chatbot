@@ -36,7 +36,9 @@ The user's eight-question screenshot exposed failures not covered by the origina
 
 Complete English questions now bypass model rewriting; supported English follow-ups use the local subject resolver. Non-English translation receives only the locally resolved current question and cannot replace an explicit supported disease or country. Named-package inclusion retrieval is restricted to labelled inclusion sections. Broad cross-country cost comparison retrieval is restricted to the supplied comparison page. Unknown comparison responses explain the missing like-for-like evidence.
 
-The updated suite passed **40 tests**, including a package switch after an Adrenal cost question, comparison after two package topics, rejected translation subject substitution, and recovery after switching to Adenocarcinoma. Provider interruptions and free-host sleep remain limitations. A new live mixed-topic verification is recorded separately when completed.
+The updated suite passed **42 tests**, including a package switch after an Adrenal cost question, comparison after two package topics, rejected translation subject substitution, and recovery after switching to Adenocarcinoma. A missing recovery time now returns a deterministic unknown/free-quote response before generation, rather than summarizing program duration. Two advertised country offers always retain a warning that equivalent packages were not verified.
+
+The live mixed-topic check after the subject-switch fix produced an actual Gemini summary of both Adenocarcinoma inclusion sections after an Adrenal cost question, citing only the Adenocarcinoma package. The following country comparison cited the supplied comparison page and its two country offer rows. The subsequent recovery/offer-qualification refinements are covered by the full 42-test suite. Provider interruptions and free-host sleep remain limitations; successful summaries in this run do not guarantee continuous provider availability.
 
 ## Scope
 
