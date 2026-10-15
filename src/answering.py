@@ -96,6 +96,12 @@ class Bot:
             retrieved = Retriever(self.retriever.snapshot, use_vectors=False).retrieve(resolved)
         if not retrieved:
             return Answer('not_found', message('not_found', language), default_source, language=language, quote_intent=True, resolved_question=resolved)
+        if re.search(r'\b(recovery|recover|recuperaci[oó]n)\b', resolved, re.I):
+            reference = self._extractive(q, resolved, retrieved, language)
+            if reference.status == 'not_found':
+                # If the indexed passages have no recovery-time evidence, do not
+                # let generation substitute a summary of program duration.
+                return reference
         # Named package prices already have complete labelled source rows. Rendering
         # those rows directly is faster and avoids asking an LLM to restate money.
         if language == 'en' and is_price_question(resolved) and any(re.search(r'\b'+c+r'\b', resolved, re.I) for c in CONDITIONS) and not re.search(r'cheaper|compar|versus', resolved, re.I):
@@ -127,7 +133,8 @@ class Bot:
             return Answer(status, message(status, language), source_links(retrieved[:1]), language=language, mode='gemini', quote_intent=status == 'not_found', resolved_question=resolved)
         by_id = {c['id']:c for c in retrieved}
         claims = payload['claims']
-        if re.search(r'\b(compare|comparison|cheaper|versus)\b', resolved, re.I):
+        comparison = bool(re.search(r'\b(compare|comparison|cheaper|versus)\b', resolved, re.I))
+        if comparison:
             countries = [c for c in DESTINATIONS if re.search(r'\b'+c+r'\b', resolved, re.I)]
             evidence_text = ' '.join(c['quote'] + ' ' + by_id[c['chunk_id']]['title'] for c in claims).lower()
             if len(countries) > 1 and not all(c in evidence_text for c in countries):
@@ -136,10 +143,14 @@ class Bot:
         # from being attached to a different package by a generated paraphrase.
         price = is_price_question(resolved)
         text = message('trick', language) if re.search(r'\b(heard|confirm)\b', question, re.I) and price else message('evidence', language)
+        if comparison and price:
+            # Two advertised prices alone do not establish equivalent packages
+            # or a country-wide ranking. Keep that limitation next to the rows.
+            text = message('comparison', language) + '\n\n' + message('evidence', language)
         if not price:
             text = '\n\n'.join(c['text'] for c in claims)
         evidence = [{'quote':c['quote'], 'heading':by_id[c['chunk_id']]['heading'], 'url':by_id[c['chunk_id']]['url']} for c in claims]
-        return Answer('answered', text, source_links([by_id[i] for i in payload['used_chunk_ids']]), evidence, language, 'gemini', quote_intent(question), resolved)
+        return Answer('answered', text, source_links([by_id[i] for i in payload['used_chunk_ids']]), evidence, language, 'gemini', quote_intent(question) or comparison, resolved)
 
     def _extractive(self, question, resolved, retrieved, language):
         """Keyless reference mode quotes evidence; it never fabricates a summary.

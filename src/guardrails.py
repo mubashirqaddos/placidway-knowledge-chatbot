@@ -22,7 +22,7 @@ TEXT = {
         'unavailable': 'Service temporarily unavailable. Please try again. You can also contact PlacidWay through a source page for a free quote.',
         'excerpt_fallback': 'AI summaries are temporarily unavailable. Showing the original source text instead.',
         'comparison': "I couldn't verify a like-for-like comparison for both countries in the provided pages. Different treatments or package inclusions should not be compared as equivalent. Please request a free quote from PlacidWay.",
-        'recovery': "The provided package page does not state a verified recovery time. A treatment program's duration is not the same as recovery time. Please ask the clinic through PlacidWay.",
+        'recovery': "The provided package page does not state a verified recovery time. A treatment program's duration is not the same as recovery time. Please contact the clinic through PlacidWay for a free quote and recovery guidance.",
         'trick': "I can't confirm the price you suggested. Here is what the provided page actually lists:",
         'evidence': 'The provided page states:',
         'disclaimer': 'Website information only; not personal medical advice. Treatment descriptions do not establish safety or effectiveness.',
