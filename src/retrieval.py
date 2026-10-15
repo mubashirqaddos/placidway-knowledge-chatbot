@@ -63,6 +63,14 @@ class Retriever:
                 place = place.strip()
                 if not place.startswith(('the ', 'a ', 'an ')):
                     candidates = [i for i in candidates if place in self.chunks[i]['title'].lower()]
+        if condition and 'include' in tokens:
+            # Package-wide wording occurs throughout a page. Inclusions need the
+            # actual labelled program sections, not a paragraph about cost.
+            candidates = [i for i in candidates if re.search(r'\b(included|includes|inclusions)\b', self.chunks[i]['heading'], re.I)]
+        if not condition and len(countries) > 1 and 'compare' in tokens:
+            # Cross-country pricing comes from the supplied comparison page,
+            # rather than the last disease package discussed in the chat.
+            candidates = [i for i in candidates if self.chunks[i]['page_id'] == 'comparison']
         if not candidates:
             return []
         scores, coverage = {}, {}

@@ -6,7 +6,10 @@ Do not diagnose, recommend treatment, establish clinical efficacy or safety, boo
 appointments, or assert personal suitability. Promotional medical claims are website
 claims, not established medical facts. Return medical for personal medical advice.
 If the exact information is absent return not_found. A program duration is NOT a
-recovery time. Compare prices only for the same procedure, currency, duration and
+recovery time. For package inclusions, summarize the included services for each
+listed program, keeping inpatient and outpatient details distinct. A paragraph
+about package cost does not answer what services are included.
+Compare prices only for the same procedure, currency, duration and
 inclusions in BOTH destinations. Broad alternative medicine rows for different
 procedures are not comparable. Never infer a clinic's package price from an unrelated
 clinic, disease, consultation fee or a different service on the same page.
