@@ -154,3 +154,35 @@ def test_fresh_recovery_followup_stays_with_new_package_after_switch():
     assert answer.status == 'not_found'
     assert 'adenocarcinoma' in answer.resolved_question
     assert all('/7903/' in s['url'] for s in answer.sources)
+
+
+def test_missing_recovery_evidence_does_not_generate_program_duration_answer():
+    class ProviderMustNotBeCalled:
+        def generate(self, *args, **kwargs):
+            raise AssertionError('A missing recovery time must be handled locally.')
+
+    assistant = Bot(Retriever(load_index(), use_vectors=False), ProviderMustNotBeCalled())
+    answer = assistant.answer('And what about recovery time?', [
+        {'role': 'user', 'content': 'What is included in the Adenocarcinoma package?'}])
+    assert answer.status == 'not_found' and answer.quote_intent
+    assert 'free quote' in answer.text
+    assert not answer.evidence
+    assert all('/7903/' in s['url'] for s in answer.sources)
+
+
+def test_two_country_offer_rows_are_not_presented_as_equivalent_packages():
+    import json
+
+    class TwoOfferProvider:
+        def generate(self, system, prompt, schema, *args):
+            chunks = json.loads(prompt)['CONTEXT']
+            selected = [next(c for c in chunks if country in c['text']) for country in ('Turkey', 'Mexico')]
+            return {'status': 'answered', 'used_chunk_ids': [c['id'] for c in selected],
+                    'claims': [{'text': 'Published clinic offer.', 'quote': c['text'], 'chunk_id': c['id']} for c in selected]}
+
+    assistant = Bot(Retriever(load_index(), use_vectors=False), TwoOfferProvider())
+    answer = assistant.answer('Is alternative medicine cheaper in Mexico or Turkey?')
+    assert answer.status == 'answered' and answer.quote_intent
+    assert 'like-for-like' in answer.text and 'free quote' in answer.text
+    assert len(answer.evidence) == 2
+    assert all('search-medical-pricings' in s['url'] for s in answer.sources)
