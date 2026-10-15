@@ -30,6 +30,14 @@ Verified locally on 14 October 2026. This record distinguishes local checks from
 - Seven-day availability: deployment verified on 14 October 2026. Keep it available at least seven days after actual submission; this future period is not yet fulfilled and idle hibernation remains a free-host limitation.
 - No assessment email was sent. The actual hiring recipient and reviewer username are not available in the supplied PDF.
 
+## Subject-switch regression review — 15 October 2026
+
+The user's eight-question screenshot exposed failures not covered by the original isolated evaluation: the Adenocarcinoma inclusions question reused the preceding Adrenal cost subject, and the broad Mexico/Turkey comparison cited a disease package. These answers are not passes. The old eight-question record is historical and does not establish correct mixed-topic conversation behavior.
+
+Complete English questions now bypass model rewriting; supported English follow-ups use the local subject resolver. Non-English translation receives only the locally resolved current question and cannot replace an explicit supported disease or country. Named-package inclusion retrieval is restricted to labelled inclusion sections. Broad cross-country cost comparison retrieval is restricted to the supplied comparison page. Unknown comparison responses explain the missing like-for-like evidence.
+
+The updated suite passed **40 tests**, including a package switch after an Adrenal cost question, comparison after two package topics, rejected translation subject substitution, and recovery after switching to Adenocarcinoma. Provider interruptions and free-host sleep remain limitations. A new live mixed-topic verification is recorded separately when completed.
+
 ## Scope
 
 This is a website knowledge chatbot, not a booking system or medical decision tool. The source allowlist, grounded answers, honest fallback, price context, chat UI and refresh are implemented. The required public URL is deployed. The remaining future obligation is availability after actual submission.
